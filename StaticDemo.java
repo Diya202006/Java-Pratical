@@ -1,34 +1,24 @@
-class Student {
-    static String collegeName;
-    String studentName;
+class StaticDemo {
+
+    static int count;
 
     static {
-        collegeName = "ABC Engineering College";
-        System.out.println("Static Block Executed: College Name Set");
+        System.out.println("Static block executed.");
+        count = 10;
     }
 
-    Student(String name) {
-        studentName = name;
+    static void display() {
+        System.out.println("Value of static variable count = " + count);
     }
 
-    static void displayCollege() {
-        System.out.println("College Name: " + collegeName);
-    }
-
-    void displayStudent() {
-        System.out.println("Student Name: " + studentName);
-    }
-}
-
-public class StaticDemo {
     public static void main(String[] args) {
 
-        Student.displayCollege();
+        System.out.println("Main method executed.");
 
-        Student s1 = new Student("Rahul");
-        Student s2 = new Student("Anita");
+        display();
 
-        s1.displayStudent();
-        s2.displayStudent();
+        count = 20;
+
+        System.out.println("Updated value of count = " + count);
     }
 }
